@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Đăng ký - Bài kiểm tra Chương 2</title>
+</head>
+<body>
+
+    <!-- Header dùng chung -->
+    <div align="center">
+        <h2>BÀI KIỂM TRA CHƯƠNG 2</h2>
+        <p>
+            <i><b>Môn học:</b> Mạng máy tính</i><br>
+            <i><b>Mã số sinh viên:</b> 12355</i><br>
+            <i><b>Họ và tên:</b> Nguyễn Văn A</i>
+        </p>
+    </div>
+
+    <hr color="blue">
+
+    <!-- Thanh điều hướng Menu -->
+    <p align="center">
+        <a href="bt08-index.html">Trang chủ</a> &nbsp;
+        <a href="bt08-content.html">Nội dung môn học</a> &nbsp;
+        <a href="bt08-register.html">Đăng ký</a>
+    </p>
+
+    <h3 align="center">ĐĂNG KÝ THAM GIA DIỄN ĐÀN</h3>
+
+    <form action="#" method="post">
+        <!-- Bảng tạo khung cho form đăng ký -->
+        <table border="1" align="center" cellspacing="0" cellpadding="5" bgcolor="yellow">
+            <tr>
+                <td><label for="username"><b>Tên đăng nhập:</b></label></td>
+                <td>
+                    <input type="text" id="username" name="username" placeholder="Nhập tên đăng nhập" required style="width: 95%;">
+                </td>
+            </tr>
+            <tr>
+                <td><label for="password"><b>Mật khẩu:</b></label></td>
+                <td>
+                    <input type="password" id="password" name="password" required style="width: 95%;">
+                </td>
+            </tr>
+            <tr>
+                <td><b>Giới tính:</b></td>
+                <td>
+                    <input type="radio" id="male" name="gender" value="Nam" checked>
+                    <label for="male">Nam</label>
+                    <input type="radio" id="female" name="gender" value="Nữ">
+                    <label for="female">Nữ</label>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="dob"><b>Ngày sinh:</b></label></td>
+                <td>
+                    <input type="date" id="dob" name="dob" required>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="email"><b>Email:</b></label></td>
+                <td>
+                    <input type="email" id="email" name="email" required style="width: 95%;">
+                </td>
+            </tr>
+            <tr>
+                <td><label for="language"><b>Ngôn ngữ lập trình yêu thích nhất:</b></label></td>
+                <td>
+                    <select id="language" name="language" style="width: 100%;">
+                        <option value="C++">C++</option>
+                        <option value="C#">C#</option>
+                        <option value="PHP">PHP</option>
+                        <option value="Java">Java</option>
+                        <option value="Python">Python</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><b>Quy định khi tham gia diễn đàn:</b></td>
+                <td>
+                    <textarea name="rules" rows="4" cols="30" readonly>Bài viết phải nghiêm túc, không chứa quảng cáo, không có nội dung phản cảm</textarea>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <!-- Nút Đăng ký và Hủy dạng nút Submit / Reset -->
+                    <input type="submit" value="Đăng ký" style="background-color: #337ab7; color: white; border: none; padding: 8px 20px; font-weight: bold; cursor: pointer; border-radius: 4px;">
+                    &nbsp;&nbsp;
+                    <input type="reset" value="Hủy" style="background-color: #337ab7; color: white; border: none; padding: 8px 25px; font-weight: bold; cursor: pointer; border-radius: 4px;">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <br><hr><p align="center"><a href="../web.html">Quay lại danh sách</a></p>
+
+</body>
+</html>

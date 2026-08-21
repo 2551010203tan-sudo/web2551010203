@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Bài tập 05 - Bản đồ Việt Nam</title>
+</head>
+<body>
+
+    <h1 align="center">BẢN ĐỒ VIỆT NAM</h1>
+
+    <!-- Ảnh bản đồ liên kết với map qua usemap="#map_bando" -->
+    <div align="center">
+        <img src="../images/bando.jpg" usemap="#map_bando" alt="Bản đồ Việt Nam" border="0">
+
+        <!-- Định nghĩa thẻ MAP chứa các vùng liên kết -->
+        <map name="map_bando">
+            <!-- 1. Hà Nội (Hình tròn - circle: tâm x, tâm y, bán kính r) -->
+            <area shape="circle" coords="275,225,15" href="https://hanoi.gov.vn/" target="_blank" title="Cổng thông tin điện tử Hà Nội" alt="Hà Nội">
+
+            <!-- 2. Huế (Đa giác - poly: tọa độ x1,y1,x2,y2,x3,y3,...) -->
+            <area shape="poly" coords="345,390,355,395,350,405,340,400" href="https://hue.gov.vn/" target="_blank" title="Cổng thông tin điện tử Huế" alt="Huế">
+
+            <!-- 3. TP HCM (Hình chữ nhật - rect: x1,y1 góc trên trái, x2,y2 góc dưới phải) -->
+            <area shape="rect" coords="300,600,340,625" href="https://hochiminhcity.gov.vn/" target="_blank" title="Cổng thông tin điện tử Thành phố Hồ Chí Minh" alt="TP HCM">
+        </map>
+    </div>
+
+    <br>
+    <hr width="80%" align="center">
+    <p align="center"><a href="../web.html">Quay lại danh sách</a></p>
+
+</body>
+</html>
