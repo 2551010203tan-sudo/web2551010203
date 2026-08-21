@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Chương 3 - Bài 4 - CSS Animation</title>
+    <style>
+        /* Khung chứa tổng quát */
+        .wrapper {
+            border: 1px solid #4a7bb0;
+            padding: 10px;
+            width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+        }
+
+        /* BANNER Animation */
+        .banner {
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: changeBg 4s infinite alternate;
+        }
+
+        .banner span {
+            font-weight: bold;
+            animation: changeFontSize 4s infinite alternate;
+        }
+
+        @keyframes changeBg {
+            0% { background-color: #ff0040; }
+            50% { background-color: #f000ff; }
+            100% { background-color: #ff0080; }
+        }
+
+        @keyframes changeFontSize {
+            0% { font-size: 14px; }
+            100% { font-size: 24px; }
+        }
+
+        /* Khối chứa 4 ô vuông */
+        .box-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 40px 0;
+        }
+
+        .box {
+            width: 140px;
+            height: 140px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: yellow;
+            position: relative;
+            box-sizing: border-box;
+        }
+
+        /* Khung 1: Đổi hình ảnh tuần tự */
+        .box-1 {
+            border: 3px solid red;
+            background-size: cover;
+            background-position: center;
+            animation: changeImage 6s infinite;
+        }
+
+        @keyframes changeImage {
+            0%, 45% {
+                background-image: url('../images/sea1.jpg'); /* Thay đường dẫn hình 1 */
+            }
+            50%, 95% {
+                background-image: url('../images/sea2.jpg'); /* Thay đường dẫn hình 2 */
+            }
+            100% {
+                background-image: url('../images/sea1.jpg');
+            }
+        }
+
+        /* Khung 2: Bo góc chéo + Viền đứt nét xanh */
+        .box-2 {
+            background-color: #00ffff;
+            border: 3px dashed blue;
+            border-top-left-radius: 25px;
+            border-bottom-left-radius: 25px;
+        }
+
+        /* Khung 3: Bo góc chéo + Viền chấm tím */
+        .box-3 {
+            background-color: #00ffff;
+            border: 3px dotted #ff00ff;
+            border-top-left-radius: 25px;
+            border-bottom-right-radius: 25px;
+        }
+
+        /* Khung 4: Xoay theo chiều kim đồng hồ */
+        .box-4 {
+            background-color: #008080;
+            border: 2px solid #a6c400;
+            color: #a6c400;
+            font-size: 16px;
+            animation: rotateBox 4s linear infinite;
+        }
+
+        @keyframes rotateBox {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <!-- Banner chuyển màu và phóng to chữ -->
+        <div class="banner">
+            <span>BANNER</span>
+        </div>
+
+        <!-- 4 Khung hình bên dưới -->
+        <div class="box-container">
+            <!-- Khung 1 -->
+            <div class="box box-1">
+                <span>1</span>
+            </div>
+
+            <!-- Khung 2 -->
+            <div class="box box-2">
+                <span>2</span>
+            </div>
+
+            <!-- Khung 3 -->
+            <div class="box box-3">
+                <span>3</span>
+            </div>
+
+            <!-- Khung 4 -->
+            <div class="box box-4">
+                <span>Rotate</span>
+            </div>
+        </div>
+    </div>
+
+    <br><hr>
+    <p align="center"><a href="../web.html">Quay lại danh sách</a></p>
+
+</body>
+</html>

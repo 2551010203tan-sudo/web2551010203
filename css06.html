@@ -1,0 +1,158 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Chương 3 - Bài 6 - iPhone 16 Promax</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            padding: 20px 0;
+        }
+
+        /* Container chính */
+        .container {
+            width: 850px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        /* 1. Header */
+        .header {
+            background-color: #222222;
+            color: #ffffff;
+            text-align: center;
+            padding: 15px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /* 2. Banner chứa ảnh & chữ đè lên */
+        .hero-banner {
+            position: relative;
+            width: 100%;
+            height: 250px;
+            background: url('../images/iphone16.jpg') no-repeat center center;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-title {
+            color: #ffff00;
+            font-size: 32px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        /* 3. Khối 3 tính năng chính */
+        .features {
+            display: flex;
+            justify-content: space-between;
+            padding: 30px 20px;
+            gap: 15px;
+        }
+
+        .feature-card {
+            flex: 1;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            padding: 15px;
+            background-color: #fff;
+            min-height: 120px;
+        }
+
+        .feature-card h4 {
+            font-size: 13px;
+            font-weight: bold;
+            color: #000;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .feature-card p {
+            font-size: 11px;
+            color: #555;
+            line-height: 1.4;
+        }
+
+        /* 4. Footer Khuyến mãi */
+        .promo-footer {
+            background-color: #28a745;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .promo-footer h3 {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .btn-buy {
+            background-color: #ffffff;
+            color: #000000;
+            border: 1px solid #ccc;
+            padding: 6px 16px;
+            font-size: 12px;
+            cursor: pointer;
+            border-radius: 2px;
+        }
+
+        .btn-buy:hover {
+            background-color: #e6e6e6;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            Iphone 16 Promax
+        </div>
+
+        <!-- Banner -->
+        <div class="hero-banner">
+            <h1 class="hero-title">Trải nghiệm công nghệ vượt trội</h1>
+        </div>
+
+        <!-- Các tính năng -->
+        <div class="features">
+            <div class="feature-card">
+                <h4>Dung lượng pin lớn</h4>
+                <p>Thời lượng pin 27 giờ, tăng 17% so với phiên bản trước</p>
+            </div>
+
+            <div class="feature-card">
+                <h4>Camera chính 48MP, camera góc siêu rộng</h4>
+                <p>Chụp ảnh chất lượng cao trong mọi điều kiện ánh sáng.</p>
+            </div>
+
+            <div class="feature-card">
+                <h4>Sạc nhanh không dây MagSafe từ 15W lên 25W</h4>
+                <p>Sạc được 50% pin chỉ với 30 phút cắm sạc</p>
+            </div>
+        </div>
+
+        <!-- Footer Đặt mua -->
+        <div class="promo-footer">
+            <h3>Mua ngay hôm nay và nhận ưu đãi đặc biệt!</h3>
+            <button class="btn-buy">Đặt mua</button>
+        </div>
+    </div>
+
+    <br><hr>
+    <p align="center"><a href="../web.html">Quay lại danh sách</a></p>
+
+</body>
+</html>

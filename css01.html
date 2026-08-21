@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Chương 3 - Bài 1</title>
+    <style>
+        .shadow-text {
+            font-size: 24px;
+            font-weight: bold;
+            text-shadow: 2px 2px 5px gray;
+        }
+        .capitalize-text {
+            text-transform: capitalize;
+            text-align: center;
+        }
+        .uppercase-text {
+            text-transform: uppercase;
+            text-align: right;
+        }
+        .lowercase-text {
+            text-transform: lowercase;
+        }
+        .first-letter-big::first-letter {
+            font-size: 35px;
+            font-weight: bold;
+            float: left;
+            line-height: 1;
+            margin-right: 4px;
+        }
+        .first-line-bold::first-line {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <p class="shadow-text">Dòng này được định dạng có bóng (shadow)</p>
+    <p>Văn bản bình thường</p>
+    <p class="capitalize-text">hoa các ký tự đầu từ</p>
+    <p class="uppercase-text">hoa tất cả các ký tự</p>
+    <p class="lowercase-text">ĐOẠN NÀY SẼ ĐƯỢC CHUYỂN VỀ CHỮ THƯỜNG</p>
+    <p class="first-letter-big first-line-bold">
+        Đoạn văn bản này có ký tự đầu được định dạng font-size lớn, dòng đầu tiên được in đậm
+    </p>
+
+    <br><hr>
+    <p align="center"><a href="web.html">Quay lại danh sách</a></p>
+
+</body>
+</html>

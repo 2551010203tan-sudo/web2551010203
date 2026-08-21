@@ -1,0 +1,263 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Chương 3 - Bài 7 - Shop Online Dropdown</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f2f2f2;
+            padding-bottom: 30px;
+        }
+
+        .container {
+            width: 900px;
+            margin: 0 auto;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        /* Header */
+        .header {
+            background-color: #2b2b2b;
+            color: white;
+            text-align: center;
+            padding: 20px 10px 10px 10px;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        .header p {
+            font-size: 13px;
+            color: #ccc;
+        }
+
+        /* Thanh Navigation + Dropdown */
+        .nav-bar {
+            background-color: #383838;
+            text-align: center;
+            position: relative;
+            z-index: 100;
+        }
+
+        .nav-bar ul {
+            list-style: none;
+            display: inline-flex;
+        }
+
+        .nav-bar li {
+            position: relative;
+        }
+
+        .nav-bar a {
+            display: block;
+            padding: 10px 25px;
+            color: #ffff00;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .nav-bar li:hover > a {
+            background-color: #4a4a4a;
+            color: #ff3333;
+        }
+
+        /* Dropdown Submenu */
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #383838;
+            min-width: 150px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            text-align: left;
+        }
+
+        .dropdown li {
+            width: 100%;
+            border-bottom: 1px dotted #666;
+        }
+
+        .dropdown a {
+            padding: 8px 15px;
+            font-size: 13px;
+            color: #ffff00;
+        }
+
+        .dropdown a:hover {
+            background-color: #555;
+        }
+
+        /* Hiển thị dropdown khi hover */
+        .nav-bar li:hover .dropdown {
+            display: block;
+        }
+
+        /* Lưới Sản phẩm (Product Grid) */
+        .product-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding: 20px;
+            justify-content: center;
+        }
+
+        .product-card {
+            width: 200px;
+            background-color: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 140px;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
+
+        .product-card h3 {
+            font-size: 14px;
+            color: #000;
+            margin-bottom: 8px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product-card .price {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .btn-add {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 6px 15px;
+            font-size: 12px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .btn-add:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>Shop Online</h1>
+            <p>Chào mừng bạn đến với cửa hàng trực tuyến của chúng tôi!</p>
+        </div>
+
+        <!-- Navigation Menu -->
+        <div class="nav-bar">
+            <ul>
+                <li><a href="#">Trang chủ</a></li>
+                <li>
+                    <a href="#">Sản phẩm</a>
+                    <!-- Menu sổ xuống -->
+                    <ul class="dropdown">
+                        <li><a href="#">Phụ kiện</a></li>
+                        <li><a href="#">Điện thoại</a></li>
+                        <li><a href="#">Laptop</a></li>
+                        <li><a href="#">Máy tính bảng</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Khuyến mãi</a></li>
+                <li><a href="#">Liên hệ</a></li>
+            </ul>
+        </div>
+
+        <!-- Danh sách sản phẩm -->
+        <div class="product-grid">
+            <!-- Sản phẩm 1 -->
+            <div class="product-card">
+                <img src="../images/sac-khong-day.jpg" alt="Sạc không dây">
+                <h3>Sạc điện thoại không dây</h3>
+                <div class="price">Giá: 250.000đ</div>
+                <button class="btn-add">Thêm vào giỏ</button>
+            </div>
+
+            <!-- Sản phẩm 2 -->
+            <div class="product-card">
+                <img src="../images/tai-nghe.jpg" alt="Tai nghe">
+                <h3>Tai nghe Bluetooth</h3>
+                <div class="price">Giá: 490.000đ</div>
+                <button class="btn-add">Thêm vào giỏ</button>
+            </div>
+
+            <!-- Sản phẩm 3 -->
+            <div class="product-card">
+                <img src="../images/balo.jpg" alt="Balo Laptop">
+                <h3>Balo Laptop</h3>
+                <div class="price">Giá: 560.000đ</div>
+                <button class="btn-add">Thêm vào giỏ</button>
+            </div>
+
+            <!-- Sản phẩm 4 -->
+            <div class="product-card">
+                <img src="../images/sac-khong-day.jpg" alt="Sạc không dây">
+                <h3>Sạc điện thoại không dây</h3>
+                <div class="price">Giá: 250.000đ</div>
+                <button class="btn-add">Thêm vào giỏ</button>
+            </div>
+
+            <!-- Sản phẩm 5 -->
+            <div class="product-card">
+                <img src="../images/tai-nghe.jpg" alt="Tai nghe">
+                <h3>Tai nghe Bluetooth</h3>
+                <div class="price">Giá: 490.000đ</div>
+                <button class="btn-add">Thêm vào giỏ</button>
+            </div>
+
+            <!-- Sản phẩm 6 -->
+            <div class="product-card">
+                <img src="../images/balo.jpg" alt="Balo Laptop">
+                <h3>Balo Laptop</h3>
+                <div class="price">Giá: 560.000đ</div>
+                <button class="btn-add">Thêm vào giỏ</button>
+            </div>
+
+            <!-- Sản phẩm 7 -->
+            <div class="product-card">
+                <img src="../images/sac-khong-day.jpg" alt="Sạc không dây">
+                <h3>Sạc điện thoại không dây</h3>
+                <div class="price">Giá: 250.000đ</div>
+                <button class="btn-add">Thêm vào giỏ</button>
+            </div>
+
+            <!-- Sản phẩm 8 -->
+            <div class="product-card">
+                <img src="../images/tai-nghe.jpg" alt="Tai nghe">
+                <h3>Tai nghe Bluetooth</h3>
+                <div class="price">Giá: 490.000đ</div>
+                <button class="btn-add">Thêm vào giỏ</button>
+            </div>
+        </div>
+    </div>
+
+    <br><hr>
+    <p align="center"><a href="../web.html">Quay lại danh sách</a></p>
+
+</body>
+</html>

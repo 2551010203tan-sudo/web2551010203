@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Chương 3 - Bài 2</title>
+    <link rel="stylesheet" href="css/css02.css">
+</head>
+<body>
+
+    <div class="main-container">
+        <h2>CÁC SỰ KIỆN TRONG THÁNG 12/2025</h2>
+
+        <!-- Bảng danh sách sự kiện -->
+        <table class="event-table">
+            <thead>
+                <tr>
+                    <th>SỰ KIỆN</th>
+                    <th>ĐỊA ĐIỂM</th>
+                    <th>THỜI GIAN</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="row-light">
+                    <td>Hội thi tay nghề điêu khắc</td>
+                    <td>Tây Ninh</td>
+                    <td>Từ ngày 01-04 tháng 12/2015</td>
+                </tr>
+                <tr class="row-dark">
+                    <td>Triển lãm tranh sơn mài</td>
+                    <td>Bình Dương</td>
+                    <td>Từ ngày 10-15 tháng 12/2015</td>
+                </tr>
+                <tr class="row-light">
+                    <td>Hội thi bánh dân gian Nam Bộ</td>
+                    <td>Vĩnh Long</td>
+                    <td>Từ ngày 15-20 tháng 12/2015</td>
+                </tr>
+                <tr class="row-dark">
+                    <td>Hội thi văn nghệ quần chúng</td>
+                    <td>Thành Phố Hồ Chí Minh</td>
+                    <td>Từ ngày 25-30 tháng 12/2015</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Form Đăng ký -->
+        <div class="form-container">
+            <div class="form-title">Đăng ký Tham gia Sự kiện</div>
+            <form action="#" method="post">
+                <div class="form-group">
+                    <label for="fullname">Họ và Tên</label>
+                    <input type="text" id="fullname" name="fullname" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Số điện thoại</label>
+                    <input type="tel" id="phone" name="phone" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="event">Chọn sự kiện</label>
+                    <select id="event" name="event" class="form-control">
+                        <option value="">-- Chọn sự kiện --</option>
+                        <option value="1">Hội thi tay nghề điêu khắc</option>
+                        <option value="2">Triển lãm tranh sơn mài</option>
+                        <option value="3">Hội thi bánh dân gian Nam Bộ</option>
+                        <option value="4">Hội thi văn nghệ quần chúng</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="note">Ghi chú thêm</label>
+                    <textarea id="note" name="note" class="form-control" rows="4"></textarea>
+                </div>
+
+                <button type="submit" class="btn">Đăng ký ngay</button>
+            </form>
+        </div>
+    </div>
+
+    <br><hr>
+    <p align="center"><a href="web.html">Quay lại danh sách</a></p>
+
+</body>
+</html>
