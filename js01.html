@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bảng cửu chương</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            padding-top: 20px;
+        }
+
+        /* Khung viền ngoài cùng bọc toàn bộ bảng */
+        .main-container {
+            border: 2px solid #2b579a;
+            padding: 15px;
+            width: fit-content;
+            text-align: center;
+        }
+
+        h2 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: #000;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        /* Lưới 4 cột chứa 8 bảng cửu chương */
+        .table-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        /* Ô chứa từng bảng cửu chương con */
+        .table-box {
+            border: 1px solid #7f9db9;
+            padding: 8px 12px;
+            text-align: center;
+            font-size: 14px;
+            line-height: 1.5;
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+        <h2>BẢNG CỬU CHƯƠNG</h2>
+        <div class="table-grid" id="multiplication-table"></div>
+    </div>
+
+    <script>
+        const container = document.getElementById('multiplication-table');
+        let htmlContent = '';
+
+        // Vòng lặp sinh ra các bảng từ 2 đến 9
+        for (let i = 2; i <= 9; i++) {
+            htmlContent += '<div class="table-box">';
+            for (let j = 2; j <= 9; j++) {
+                htmlContent += `${i} x ${j} = ${i * j}<br>`;
+            }
+            htmlContent += '</div>';
+        }
+
+        container.innerHTML = htmlContent;
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập JS 02</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            padding-top: 30px;
+        }
+
+        .container {
+            border: 1px solid #7f9db9;
+            padding: 20px 30px;
+            width: fit-content;
+            min-width: 350px;
+        }
+
+        .result-title {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .info-date {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 15px 0 10px 0;
+        }
+
+        .clock {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 3px 10px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div id="result" class="result-title"></div>
+        <div id="date-info" class="info-date"></div>
+        <div id="clock" class="clock"></div>
+        <button onclick="showDateTime()">Xem ngày giờ</button>
+    </div>
+
+    <script>
+        // Hàm kiểm tra năm nhuận
+        function isLeapYear(year) {
+            return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
+        }
+
+        // Hàm tính số ngày trong tháng
+        function getDaysInMonth(month, year) {
+            switch (month) {
+                case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+                    return 31;
+                case 4: case 6: case 9: case 11:
+                    return 30;
+                case 2:
+                    return isLeapYear(year) ? 29 : 28;
+                default:
+                    return 0;
+            }
+        }
+
+        // Xử lý nhập tháng và năm khi trang vừa tải
+        let month = prompt("Nhập tháng");
+        if (month !== null) {
+            month = parseInt(month);
+            let year = prompt("Nhập năm", "2000");
+            
+            if (year !== null) {
+                year = parseInt(year);
+                
+                if (month >= 1 && month <= 12 && !isNaN(year) && year > 0) {
+                    let days = getDaysInMonth(month, year);
+                    document.getElementById("result").innerText = `Tháng ${month} năm ${year} có ${days} ngày`;
+                } else {
+                    document.getElementById("result").innerText = "Thông tin nhập không hợp lệ!";
+                }
+            }
+        }
+
+        let timer = null;
+
+        // Hàm hiển thị ngày tháng hiện tại và bật đồng hồ chạy tự động
+        function showDateTime() {
+            const now = new Date();
+            
+            // Lấy tên thứ bằng tiếng Việt
+            const daysOfWeek = ["Chủ nhật", "thứ 2", "thứ 3", "thứ 4", "thứ 5", "thứ 6", "thứ 7"];
+            const dayName = daysOfWeek[now.getDay()];
+            
+            const dateStr = `${now.getDate()}/${now.getMonth() + 1}/${now.getFullYear()}`;
+            document.getElementById("date-info").innerText = `Hôm nay, ${dayName} ngày ${dateStr}`;
+
+            // Cập nhật đồng hồ mỗi giây nếu chưa chạy
+            if (!timer) {
+                updateClock();
+                timer = setInterval(updateClock, 1000);
+            }
+        }
+
+        function updateClock() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            
+            document.getElementById("clock").innerText = `${hours}:${minutes}:${seconds}`;
+        }
+    </script>
+
+</body>
+</html>

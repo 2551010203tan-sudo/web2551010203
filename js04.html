@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thao tác trên mảng</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            padding-top: 30px;
+        }
+
+        .container {
+            border: 1px solid #7f9db9;
+            padding: 15px 20px;
+            width: fit-content;
+            min-width: 380px;
+        }
+
+        .input-group {
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+
+        input[type="number"] {
+            width: 150px;
+            padding: 2px 5px;
+        }
+
+        .button-group {
+            margin-bottom: 15px;
+        }
+
+        button {
+            padding: 3px 8px;
+            margin-right: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .result-line {
+            font-size: 15px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="input-group">
+            Nhập số phần tử: <input type="number" id="numElements" value="10" min="1">
+        </div>
+
+        <div class="button-group">
+            <button onclick="generateArray()">Tạo mảng</button>
+            <button onclick="sortAscending()">Sắp xếp mảng tăng</button>
+            <button onclick="sortDescending()">Sắp xếp mảng giảm</button>
+        </div>
+
+        <div class="result-line">Mảng ban đầu: <span id="originalArray"></span></div>
+        <div class="result-line">Mảng tăng dần: <span id="ascArray"></span></div>
+        <div class="result-line">Mảng giảm dần: <span id="descArray"></span></div>
+    </div>
+
+    <script>
+        let arr = [];
+
+        // Hàm tạo mảng ngẫu nhiên gồm các số nguyên < 50
+        function generateArray() {
+            const n = parseInt(document.getElementById("numElements").value);
+            
+            if (isNaN(n) || n <= 0) {
+                alert("Vui lòng nhập số phần tử hợp lệ (lớn hơn 0)!");
+                return;
+            }
+
+            arr = [];
+            for (let i = 0; i < n; i++) {
+                // Sinh số nguyên ngẫu nhiên từ 0 đến 49
+                const randomNum = Math.floor(Math.random() * 50);
+                arr.push(randomNum);
+            }
+
+            // Hiển thị mảng ban đầu và xóa kết quả sắp xếp cũ
+            document.getElementById("originalArray").innerText = arr.join("  ");
+            document.getElementById("ascArray").innerText = "";
+            document.getElementById("descArray").innerText = "";
+        }
+
+        // Hàm sắp xếp mảng tăng dần
+        function sortAscending() {
+            if (arr.length === 0) {
+                alert("Vui lòng ấn 'Tạo mảng' trước!");
+                return;
+            }
+
+            // Tạo bản sao mảng để không làm hỏng mảng ban đầu
+            const sorted = [...arr].sort((a, b) => a - b);
+            document.getElementById("ascArray").innerText = sorted.join("  ");
+        }
+
+        // Hàm sắp xếp mảng giảm dần
+        function sortDescending() {
+            if (arr.length === 0) {
+                alert("Vui lòng ấn 'Tạo mảng' trước!");
+                return;
+            }
+
+            // Tạo bản sao mảng để không làm hỏng mảng ban đầu
+            const sorted = [...arr].sort((a, b) => b - a);
+            document.getElementById("descArray").innerText = sorted.join("  ");
+        }
+
+        // Tự động khởi tạo mảng khi vừa tải trang
+        window.onload = generateArray;
+    </script>
+
+</body>
+</html>
