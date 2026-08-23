@@ -2,108 +2,21 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>String Statistic</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            padding-top: 30px;
-        }
+   <title>Bai 3 String Statistic</title>
+   <link rel=""stylesheet"href="./css/style.css">
+   </head>
+   <body>
+    <div class ="thong-ke">
+        <h3 class =" tieu-de"> String Statític</h3>
+        <div class =" dong-nhap">
+            String:
+            <input type=""tẽt" id=""chuoi" size=""32" cvalue=""Helolo, How are
+            <br>
+            <button id="" btnThongke"> Statític</button>
 
-        .container {
-            border: 1px solid #7f9db9;
-            padding: 20px 40px;
-            width: fit-content;
-            min-width: 300px;
-            text-align: center;
-        }
-
-        h2 {
-            margin-top: 0;
-            margin-bottom: 20px;
-        }
-
-        .input-group {
-            margin-bottom: 15px;
-            font-size: 15px;
-        }
-
-        input[type="text"] {
-            width: 220px;
-            padding: 2px 5px;
-        }
-
-        button {
-            padding: 2px 10px;
-            margin-bottom: 15px;
-            cursor: pointer;
-        }
-
-        .result-box {
-            text-align: left;
-            display: inline-block;
-            font-size: 15px;
-            line-height: 1.4;
-        }
-    </style>
-</head>
-<body>
-
-    <div class="container">
-        <h2>String Statistic</h2>
-        
-        <div class="input-group">
-            String: <input type="text" id="strInput" value="Hello, how are you? 1123425">
         </div>
-
-        <button onclick="analyzeString()">Statistic</button>
-
-        <div id="result" class="result-box"></div>
+        <div id="" kqThongke"></div>
     </div>
-
-    <script>
-        function analyzeString() {
-            const input = document.getElementById("strInput").value;
-            const resultDiv = document.getElementById("result");
-
-            if (!input.trim()) {
-                resultDiv.innerHTML = "";
-                return;
-            }
-
-            // 1. Đếm số từ (tách theo khoảng trắng)
-            const words = input.trim().split(/\s+/).filter(w => w.length > 0);
-            const wordCount = words.length;
-
-            // 2. Thống kê từng ký tự (chỉ giữ chữ và số, chuyển về chữ hoa)
-            const charMap = {};
-            let charCount = 0;
-
-            for (let char of input) {
-                // Kiểm tra ký tự là chữ cái hoặc chữ số
-                if (/[a-zA-Z0-9]/.test(char)) {
-                    charCount++;
-                    const upperChar = char.toUpperCase();
-                    charMap[upperChar] = (charMap[upperChar] || 0) + 1;
-                }
-            }
-
-            // 3. Chuẩn bị kết quả đầu ra
-            let output = `Characters: ${charCount}<br>`;
-            output += `Words: ${wordCount}<br>`;
-
-            // Sắp xếp các ký tự theo thứ tự bảng chữ cái/số tăng dần
-            const sortedKeys = Object.keys(charMap).sort();
-
-            for (let key of sortedKeys) {
-                output += `Character '${key}': ${charMap[key]}<br>`;
-            }
-
-            resultDiv.innerHTML = output;
-        }
-    </script>
-
-</body>
-</html>
+    <script src=".js/js03.js"> </script>
+   </body>
+   </html>

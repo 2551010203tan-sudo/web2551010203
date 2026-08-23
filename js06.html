@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>j06</title>
+    <style>
+        table {
+            width: 500px;
+            margin: 30px auto;
+            border: 1px solid #aaa;
+        }
+
+        th {
+            font-size: 18px;
+        }
+
+        td {
+            border: 1px solid #aaa;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+
+<form>
+<table>
+    <tr>
+        <th colspan="2">CÁC PHÉP TÍNH SỐ HỌC</th>
+    </tr>
+
+    <tr>
+        <td>Số thứ 1</td>
+        <td><input type="text" id="so1" value="5"></td>
+    </tr>
+
+    <tr>
+        <td>Số thứ 2</td>
+        <td><input type="text" id="so2" value="4"></td>
+    </tr>
+
+    <tr>
+        <td>Chọn phép toán</td>
+        <td>
+            <input type="radio" name="phep" value="+" checked> Cộng<br>
+            <input type="radio" name="phep" value="-"> Trừ<br>
+            <input type="radio" name="phep" value="*"> Nhân<br>
+            <input type="radio" name="phep" value="/"> Chia
+        </td>
+    </tr>
+
+    <tr>
+        <td>Kết quả</td>
+        <td><input type="text" id="kq"></td>
+    </tr>
+
+    <tr>
+        <td><button type="button" onclick="tinh()">Thực hiện</button></td>
+        <td></td>
+    </tr>
+</table>
+</form>
+
+<script>
+function tinh() {
+    let a = Number(document.getElementById("so1").value);
+    let b = Number(document.getElementById("so2").value);
+    let phep = document.querySelector('input[name="phep"]:checked').value;
+    let kq;
+
+    if (phep == "+")
+        kq = a + b;
+    else if (phep == "-")
+        kq = a - b;
+    else if (phep == "*")
+        kq = a * b;
+    else {
+        if (b == 0) {
+            alert("Không thể chia cho 0!");
+            return;
+        }
+        kq = a / b;
+    }
+
+    document.getElementById("kq").value = kq;
+}
+</script>
+
+</body>
+</html>

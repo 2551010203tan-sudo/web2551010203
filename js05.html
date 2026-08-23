@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>j05</title>
+    <style>
+        body { font: 13px Arial; }
+        .box {
+            width: 520px;
+            margin: 20px auto;
+            border: 1px solid blue;
+            padding: 8px;
+        }
+        h3 { text-align: center; }
+        input { width: 400px; }
+        label { display: inline-block; width: 75px; }
+        .btn { text-align: center; margin-top: 5px; }
+        button { font-size: 11px; }
+    </style>
+</head>
+
+<body>
+<div class="box">
+    <h3>CHƯƠNG TRÌNH XỬ LÝ CHUỖI</h3>
+
+    <label>Chuỗi S1:</label>
+    <input id="s1" value="Learning Javascript is Very Easy"><br><br>
+
+    <label>Chuỗi S2:</label>
+    <input id="s2" value="javascript"><br><br>
+
+    <label>Chuỗi S3:</label>
+    <input id="s3" value="jQuery"><br><br>
+
+    <label>Vị trí chèn:</label>
+    <input id="vt" value="0"><br>
+
+    <div class="btn">
+        <button onclick="chuanhoa()">Chuẩn hóa chuỗi</button>
+        <button onclick="dao()">Đảo chuỗi</button>
+        <button onclick="khoiphuc()">Khôi phục</button><br>
+
+        <button onclick="thay()">Thay thế S2 bằng S3</button>
+        <button onclick="chen()">Chèn S2 vào S1</button>
+        <button onclick="xoa()">Xóa S2 trong S1</button>
+    </div>
+</div>
+
+<script>
+let banDau = "Learning Javascript is Very Easy";
+
+function chuanhoa() {
+    s1.value = s1.value.trim().replace(/\s+/g, " ");
+}
+
+function dao() {
+    s1.value = s1.value.trim().split(/\s+/).reverse().join(" ");
+}
+
+function thay() {
+    if (s2.value == "") return;
+    s1.value = s1.value.replace(
+        new RegExp(s2.value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "gi"),
+        s3.value
+    );
+}
+
+function chen() {
+    let n = Number(vt.value);
+    if (n < 0 || n > s1.value.length) {
+        alert("Vị trí không hợp lệ!");
+        return;
+    }
+    s1.value = s1.value.slice(0,n) + s2.value + s1.value.slice(n);
+}
+
+function xoa() {
+    if (s2.value == "") return;
+    s1.value = s1.value.replace(
+        new RegExp(s2.value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "gi"),
+        ""
+    );
+}
+
+function khoiphuc() {
+    s1.value = banDau;
+    vt.value = 0;
+}
+</script>
+</body>
+</html>
