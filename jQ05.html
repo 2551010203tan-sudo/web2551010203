@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Q05</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+    .khung{
+        display:flex;
+        gap:5px;
+        margin: 20px auto;
+        width:410px;
+    }
+    .o{
+        width:220px;
+        height:145px;
+        border: 1px solid #4169e1;
+        position:relative;
+        overflow:visible;
+    }
+    .o img {
+        width:100px;
+        height:auto;
+        margin: 5px;
+        cursor:pointer;
+    }
+    .o:nth-child(2) img {
+        width:140px;
+    }
+    .phongto{
+        position:relative;
+        z-index:10;
+        transform: scale(1.8);
+        transition:transform 0.3;
+    }
+    </style>
+    </head>
+    <body>
+    <div class="khung">
+    <div class="o">
+    <img src="cho.jpg" alt=" con ga">
+    </div>
+    <div class="o">
+    <img src="cho.jpg" alt=" con cho ">
+    </div>
+    <script>
+    $(document).ready(function(){
+        $("img").mouseenter(function () {
+                $(this).addClass("phongto");
+            });
+
+            // Di chuyển chuột ra khỏi hình: trở về kích thước ban đầu
+            $("img").mouseleave(function () {
+                $(this).removeClass("phongto");
+            });
+
+        });
+    </script>
+
+</body>
+</html>

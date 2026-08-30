@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JQ03 - Bảng giá vật tư</title>
+
+    <!-- Thư viện jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 450px;
+        }
+
+        th, td {
+            border: 1px solid #ff9966;
+            padding: 5px;
+        }
+
+        th {
+            background-color: #e8ffe8;
+        }
+
+        h3 {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h3>BẢNG GIÁ VẬT TƯ</h3>
+
+    <table id="bang">
+        <tr>
+            <th>Tên vật tư</th>
+            <th>Đơn vị tính</th>
+            <th>Đơn giá</th>
+        </tr>
+
+        <tr>
+            <td>Cát</td>
+            <td>Khối</td>
+            <td>77,000</td>
+        </tr>
+
+        <tr>
+            <td>Đá</td>
+            <td>Khối</td>
+            <td>90,000</td>
+        </tr>
+
+        <tr>
+            <td>Xi măng Hà Tiên loại 1</td>
+            <td>Bao</td>
+            <td>120,000</td>
+        </tr>
+
+        <tr>
+            <td>Xi măng Hà Tiên loại 2</td>
+            <td>Bao</td>
+            <td>100,000</td>
+        </tr>
+    </table>
+
+    <button id="doiMau">Đổi màu nền</button>
+    <button id="macDinh">Màu nền mặc định</button>
+
+    <script>
+        // Đổi màu nền các dòng
+        $("#doiMau").click(function() {
+            $("#bang tr:odd").css("background-color", "deeppink");
+        });
+
+        // Trở về màu nền ban đầu
+        $("#macDinh").click(function() {
+            $("#bang tr").css("background-color", "");
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>jQ06</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        #box-container {
+            width: 400px;
+            height: 250px;
+            border: 1px solid blue;
+            position: relative;
+            overflow: hidden;
+        }
+        #box {
+            width: 200px;
+            height: 120px;
+            background-color: red;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        #controls {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+        }
+        button {
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="box-container">
+        <div id="box"></div>
+        <div id="controls">
+            <button id="move-right">Move right</button>
+            <button id="move-left">Move left</button>
+            <button id="move-up">Move up</button>
+            <button id="move-down">Move down</button>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function() {
+            var step = 50; // Khoảng cách di chuyển mỗi lần bấm (px)
+            $("#move-right").click(function() {
+                $("#box").animate({ left: "+=" + step + "px" }, 200);
+            });
+            $("#move-left").click(function() {
+                $("#box").animate({ left: "-=" + step + "px" }, 200);
+            });
+            $("#move-up").click(function() {
+                $("#box").animate({ top: "-=" + step + "px" }, 200);
+            });
+            $("#move-down").click(function() {
+                $("#box").animate({ top: "+=" + step + "px" }, 200);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JQ04</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        .khung{
+            width : 190px;
+            height: 120px;
+            border: 3px dolid gray;
+            margin-top: 30px;
+        }
+        .mau{
+            width:30px;
+            height:30px;
+            display:inline-block;
+            margin:10px 3px;
+            cursor:pointer;
+        }
+        #xanh {background:blue;}
+        #do  {background:red}
+         #tim { background: magenta; }
+        #luc { background: lime; }
+        .cot {
+            display: inline-block;
+            vertical-align: top;
+            width: 190px;
+            height: 200px;
+            border: 1px solid blue;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="cot">
+    Click lên các hình vuông:
+    <br>
+    <span class="mau" id="xanh"></span>
+    <span class="mau" id="do"></span>
+    <span class="mau" id="tim"></span>
+    <span class="mau" id="luc"></span>
+    <div class="khung" id="khung1"></div>
+</div>
+<div class="cot">
+    Click lên các hình vuông:
+    <br>
+    <span class="mau" id="xanh2"></span>
+    <span class="mau" id="do2"></span>
+    <span class="mau" id="tim2"></span>
+    <span class="mau" id="luc2"></span>
+    <p id="thongbao">Màu bạn chọn là Tím: rgb(255, 0, 255)</p>
+    <div class="khung" id="khung2"></div>
+</div>
+<script>// Gán màu cho các ô bên phải
+    $("#xanh2").css("background", "blue");
+    $("#do2").css("background", "red");
+    $("#tim2").css("background", "magenta");
+    $("#luc2").css("background", "lime");
+    // Khi click ô màu bên trái
+    $(".cot:first .mau").click(function() {
+        let mau = $(this).css("background-color");
+        $("#khung1").css("background-color", mau);
+    });
+    // Khi click ô màu bên phải
+    $("#xanh2").click(function() {
+        $("#khung2").css("background", "blue");
+        $("#thongbao").text("Màu bạn chọn là Xanh: rgb(0, 0, 255)");
+    });
+    $("#do2").click(function() {
+        $("#khung2").css("background", "red");
+        $("#thongbao").text("Màu bạn chọn là Đỏ: rgb(255, 0, 0)");
+    });
+    $("#tim2").click(function() {
+        $("#khung2").css("background", "magenta");
+        $("#thongbao").text("Màu bạn chọn là Tím: rgb(255, 0, 255)");
+    });
+    $("#luc2").click(function() {
+        $("#khung2").css("background", "lime");
+        $("#thongbao").text("Màu bạn chọn là Lục: rgb(0, 255, 0)");
+    });
+</script>
+</body>
+</html>

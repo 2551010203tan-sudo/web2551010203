@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>JQ02 - Tính số ngày</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+        #box {
+            width: 300px;
+            border: 1px solid blue;
+            padding: 10px;
+            margin: 30px auto;
+        }
+
+        h3 {
+            text-align: center;
+            margin-top: 0;
+        }
+
+        label {
+            display: inline-block;
+            width: 70px;
+            font-size: 13px;
+        }
+
+        input[type="text"] {
+            width: 120px;
+            height: 18px;
+            box-sizing: border-box;
+        }
+
+        #btnTinh {
+            margin-left: 70px;
+            margin-top: 3px;
+        }
+
+        #ketqua {
+            margin-top: 10px;
+            font-size: 13px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="box">
+    <h3>Tính số ngày giữa hai thời điểm</h3>
+
+    <div>
+        <label>Từ ngày:</label>
+        <input type="text" id="tuNgay" value="05/29/2018">
+    </div>
+
+    <div>
+        <label>Đến ngày:</label>
+        <input type="text" id="denNgay" value="06/30/2018">
+    </div>
+
+    <button id="btnTinh">Tính số ngày</button>
+
+    <div id="ketqua">Số ngày là: 32</div>
+</div>
+
+<script>
+$(document).ready(function () {
+
+    $("#btnTinh").click(function () {
+
+        var tuNgay = $("#tuNgay").val();
+        var denNgay = $("#denNgay").val();
+
+        // Định dạng ngày: MM/DD/YYYY
+        var p1 = tuNgay.split("/");
+        var p2 = denNgay.split("/");
+
+        if (p1.length !== 3 || p2.length !== 3) {
+            $("#ketqua").text("Ngày không hợp lệ!");
+            return;
+        }
+
+        // Date(Year, Month - 1, Day)
+        var date1 = new Date(
+            parseInt(p1[2]),
+            parseInt(p1[0]) - 1,
+            parseInt(p1[1])
+        );
+
+        var date2 = new Date(
+            parseInt(p2[2]),
+            parseInt(p2[0]) - 1,
+            parseInt(p2[1])
+        );
+
+        if (isNaN(date1.getTime()) || isNaN(date2.getTime())) {
+            $("#ketqua").text("Ngày không hợp lệ!");
+            return;
+        }
+
+        // Số mili-giây trong một ngày
+        var oneDay = 1000 * 60 * 60 * 24;
+
+        var soNgay = Math.round(
+            Math.abs(date2 - date1) / oneDay
+        );
+
+        $("#ketqua").text("Số ngày là: " + soNgay);
+    });
+
+});
+</script>
+
+</body>
+</html>
